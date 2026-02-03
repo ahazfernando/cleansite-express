@@ -1,0 +1,332 @@
+"use client";
+
+import { useState } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import Image from "next/image";
+import { Menu, X, Phone, Home, Building2, Hammer, CalendarClock, Truck, Layers, PanelTop, ChevronDown, ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
+
+const services = [
+  {
+    icon: Home,
+    title: "House Cleaning",
+    description: "Complete residential cleaning for a spotless home",
+    href: "/services/house-cleaning",
+  },
+  {
+    icon: Hammer,
+    title: "Builder's Cleaning",
+    description: "Post-construction cleanup and debris removal",
+    href: "/services/builders-cleaning",
+  },
+  {
+    icon: CalendarClock,
+    title: "Periodical Cleaning",
+    description: "Scheduled recurring cleaning services",
+    href: "/services#periodical-cleaning",
+  },
+  {
+    icon: Building2,
+    title: "Office Cleaning",
+    description: "Professional workspace sanitization",
+    href: "/services#office-cleaning",
+  },
+  {
+    icon: Truck,
+    title: "Move In/Out Cleaning",
+    description: "Thorough cleaning for property transitions",
+    href: "/services#move-cleaning",
+  },
+  {
+    icon: Layers,
+    title: "Deep Cleaning",
+    description: "Intensive cleaning for every corner",
+    href: "/services#deep-cleaning",
+  },
+  {
+    icon: PanelTop,
+    title: "Window Cleaning",
+    description: "Crystal clear windows inside and out",
+    href: "/services#window-cleaning",
+  },
+];
+
+const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const pathname = usePathname();
+
+  const navLinks = [
+    { name: "Home", path: "/" },
+    { name: "About Us", path: "/about" },
+    { name: "Blog", path: "/blog" },
+    { name: "Contact", path: "/contact" },
+  ];
+
+  const isActive = (path: string) => pathname === path;
+
+  return (
+    <header className="fixed top-2 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-[1920px]">
+      <div className="bg-white border border-border rounded-[24px] shadow-lg px-6 md:px-8">
+        <div className="flex items-center justify-between h-20">
+          {/* Logo */}
+          <Link href="/" className="flex items-center gap-2" title="Skill City Facility Solutions - Home">
+            <div className="relative h-16 w-56">
+              <Image
+                src="/SkillCityPNGLOGO.png"
+                alt="Skill City Facility Solutions - Professional Cleaning Melbourne Victoria"
+                fill
+                className="object-contain object-left"
+                priority
+              />
+            </div>
+          </Link>
+
+          {/* Desktop Navigation */}
+          <nav className="hidden lg:flex items-center gap-6">
+            <Link
+              href="/"
+              className={`text-sm font-medium transition-colors hover:text-primary ${isActive("/") ? "text-primary" : "text-foreground/80"
+                }`}
+            >
+              Home
+            </Link>
+
+            {/* Services Dropdown Trigger */}
+            <button
+              onMouseEnter={() => setIsServicesOpen(true)}
+              onClick={() => setIsServicesOpen(!isServicesOpen)}
+              className={cn(
+                "flex items-center gap-1 text-sm font-medium transition-colors hover:text-primary",
+                pathname === "/services" ? "text-primary" : "text-foreground/80"
+              )}
+            >
+              Services
+              <ChevronDown className={cn("w-3 h-3 transition-transform", isServicesOpen && "rotate-180")} />
+            </button>
+
+            {navLinks.slice(1).map((link) => (
+              <Link
+                key={link.path}
+                href={link.path}
+                className={`text-sm font-medium transition-colors hover:text-primary ${isActive(link.path)
+                  ? "text-primary"
+                  : "text-foreground/80"
+                  }`}
+              >
+                {link.name}
+              </Link>
+            ))}
+          </nav>
+
+          {/* CTA Buttons */}
+          <div className="hidden lg:flex items-center gap-4">
+            <a
+              href="tel:+61370447710"
+              className="flex items-center gap-2 text-sm font-medium text-foreground/80 hover:text-primary transition-colors"
+            >
+              <Phone className="w-4 h-4" />
+              037 044 7710
+            </a>
+            <Button className="btn-secondary" asChild>
+              <Link href="/contact">Book a Free Consultation</Link>
+            </Button>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            className="lg:hidden p-2"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            {isMenuOpen ? (
+              <X className="w-6 h-6 text-foreground" />
+            ) : (
+              <Menu className="w-6 h-6 text-foreground" />
+            )}
+          </button>
+        </div>
+
+        {/* Mobile Menu */}
+        {isMenuOpen && (
+          <div className="lg:hidden py-4 border-t border-border animate-fade-in">
+            <nav className="flex flex-col gap-2">
+              <Link
+                href="/"
+                onClick={() => setIsMenuOpen(false)}
+                className={`text-sm font-medium transition-colors hover:text-primary py-2 ${isActive("/") ? "text-primary" : "text-foreground/80"
+                  }`}
+              >
+                Home
+              </Link>
+
+              {/* Mobile Services Dropdown */}
+              <div>
+                <button
+                  onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
+                  className="flex items-center justify-between w-full text-sm font-medium text-foreground/80 hover:text-primary py-2"
+                >
+                  Services
+                  <ChevronDown className={cn("w-4 h-4 transition-transform", isMobileServicesOpen && "rotate-180")} />
+                </button>
+                {isMobileServicesOpen && (
+                  <div className="pl-4 py-2 space-y-2 animate-fade-in">
+                    {services.map((service) => (
+                      <Link
+                        key={service.title}
+                        href={service.href}
+                        onClick={() => {
+                          setIsMenuOpen(false);
+                          setIsMobileServicesOpen(false);
+                        }}
+                        className="flex items-center gap-2 py-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+                      >
+                        <service.icon className="w-4 h-4" />
+                        {service.title}
+                      </Link>
+                    ))}
+                    <Link
+                      href="/services"
+                      onClick={() => {
+                        setIsMenuOpen(false);
+                        setIsMobileServicesOpen(false);
+                      }}
+                      className="flex items-center gap-2 py-2 text-sm font-medium text-primary"
+                    >
+                      View all services <ArrowRight className="w-3 h-3" />
+                    </Link>
+                  </div>
+                )}
+              </div>
+
+              {navLinks.slice(1).map((link) => (
+                <Link
+                  key={link.path}
+                  href={link.path}
+                  onClick={() => setIsMenuOpen(false)}
+                  className={`text-sm font-medium transition-colors hover:text-primary py-2 ${isActive(link.path)
+                    ? "text-primary"
+                    : "text-foreground/80"
+                    }`}
+                >
+                  {link.name}
+                </Link>
+              ))}
+              <a
+                href="tel:+61370447710"
+                className="flex items-center gap-2 text-sm font-medium text-foreground/80 hover:text-primary transition-colors py-2"
+              >
+                <Phone className="w-4 h-4" />
+                037 044 7710
+              </a>
+              <Button className="btn-secondary w-full mt-2" asChild>
+                <Link href="/contact">Book a Free Consultation</Link>
+              </Button>
+            </nav>
+          </div>
+        )}
+      </div>
+
+      {/* Full-width Services Mega Menu - Positioned below header */}
+      {isServicesOpen && (
+        <div
+          className="hidden lg:block absolute left-4 right-4 top-full mt-2 bg-background border border-border shadow-lg z-50 animate-fade-in rounded-3xl overflow-hidden"
+          onMouseEnter={() => setIsServicesOpen(true)}
+          onMouseLeave={() => setIsServicesOpen(false)}
+        >
+          <div className="container-custom py-8">
+            <div className="flex gap-12">
+              {/* Services Grid */}
+              <div className="flex-1">
+                <div className="flex items-center justify-between mb-6">
+                  <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
+                    Our Services
+                  </span>
+                </div>
+                <div className="grid grid-cols-2 xl:grid-cols-4 gap-4">
+                  {services.map((service) => (
+                    <Link
+                      key={service.title}
+                      href={service.href}
+                      onClick={() => setIsServicesOpen(false)}
+                      className="flex items-start gap-3 p-3 rounded-xl hover:bg-muted transition-colors group"
+                    >
+                      <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors">
+                        <service.icon className="w-5 h-5 text-primary" />
+                      </div>
+                      <div>
+                        <h4 className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors">
+                          {service.title}
+                        </h4>
+                        <p className="text-xs text-muted-foreground mt-0.5 line-clamp-2">
+                          {service.description}
+                        </p>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+
+              {/* Explore Section */}
+              <div className="w-72 border-l border-border pl-8">
+                <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider block mb-6">
+                  Explore
+                </span>
+                <div className="space-y-4">
+                  <Link
+                    href="/blog"
+                    onClick={() => setIsServicesOpen(false)}
+                    className="block p-3 rounded-xl hover:bg-muted transition-colors group"
+                  >
+                    <h4 className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors">
+                      Cleaning Tips & Guides
+                    </h4>
+                    <p className="text-xs text-muted-foreground mt-1">
+                      Expert advice for a cleaner home
+                    </p>
+                  </Link>
+                  <Link
+                    href="/about"
+                    onClick={() => setIsServicesOpen(false)}
+                    className="block p-3 rounded-xl hover:bg-muted transition-colors group"
+                  >
+                    <h4 className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors">
+                      Why Choose Us
+                    </h4>
+                    <p className="text-xs text-muted-foreground mt-1">
+                      Learn about our expertise and team
+                    </p>
+                  </Link>
+                  <Link
+                    href="/contact"
+                    onClick={() => setIsServicesOpen(false)}
+                    className="block p-3 rounded-xl hover:bg-muted transition-colors group"
+                  >
+                    <h4 className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors">
+                      Book a Free Consultation
+                    </h4>
+                    <p className="text-xs text-muted-foreground mt-1">
+                      Request a no-obligation estimate
+                    </p>
+                  </Link>
+                </div>
+                <Link
+                  href="/services"
+                  onClick={() => setIsServicesOpen(false)}
+                  className="inline-flex items-center gap-1 text-sm font-medium text-primary hover:underline mt-6"
+                >
+                  View all services <ArrowRight className="w-3 h-3" />
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+    </header >
+  );
+};
+
+export default Header;

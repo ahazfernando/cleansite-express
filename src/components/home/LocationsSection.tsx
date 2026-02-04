@@ -54,7 +54,7 @@ const LocationsSection = () => {
                                 </Link>
                             </Button>
                             <Button className="btn-outline" asChild>
-                                <Link href="/contact">Book a Free Consultation</Link>
+                                <Link href="/contact-us">Book a Free Consultation</Link>
                             </Button>
                         </div>
                     </div>

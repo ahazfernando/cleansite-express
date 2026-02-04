@@ -91,7 +91,7 @@ const WhyChooseUs = () => {
         {/* CTA */}
         <div className="text-center mt-12">
           <Button className="btn-secondary" asChild>
-            <Link href="/about">Cleaning Process</Link>
+            <Link href="/about-us">Cleaning Process</Link>
           </Button>
         </div>
       </div>

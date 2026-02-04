@@ -62,7 +62,7 @@ const AboutPreview = () => {
             </div>
 
             <Button className="btn-primary" asChild>
-              <Link href="/about">Learn More</Link>
+              <Link href="/about-us">Learn More</Link>
             </Button>
           </div>
         </div>

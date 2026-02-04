@@ -19,7 +19,7 @@ const CTASection = () => {
 
               <div className="flex flex-wrap gap-4">
                 <Button className="bg-accent text-accent-foreground hover:bg-accent/90 rounded-full px-8 py-3 font-semibold flex items-center gap-2" asChild>
-                  <Link href="/contact">
+                  <Link href="/contact-us">
                     Book a Free Consultation
                     <ArrowRight className="w-4 h-4" />
                   </Link>

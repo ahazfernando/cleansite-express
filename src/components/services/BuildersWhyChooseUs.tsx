@@ -53,7 +53,7 @@ export function BuildersWhyChooseUs() {
                         </p>
 
                         <Button className="btn-primary" asChild>
-                            <Link href="/contact">Request a Quote</Link>
+                            <Link href="/contact-us">Request a Quote</Link>
                         </Button>
 
                         {/* Image below button */}

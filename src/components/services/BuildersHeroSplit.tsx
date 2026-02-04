@@ -53,7 +53,7 @@ export function BuildersHeroSplit() {
 
                         <div className="flex flex-col sm:flex-row gap-5 mb-12">
                             <Button asChild size="lg" className="h-14 px-8 text-lg bg-slate-900 hover:bg-slate-800 text-white rounded-none border-b-4 border-green-500 transition-all hover:-translate-y-1">
-                                <Link href="/contact">Get a Quote <ArrowRight className="ml-2 w-5 h-5" /></Link>
+                                <Link href="/contact-us">Get a Quote <ArrowRight className="ml-2 w-5 h-5" /></Link>
                             </Button>
                             <Button asChild variant="outline" size="lg" className="h-14 px-8 text-lg border-slate-200 text-slate-900 hover:bg-slate-50 rounded-none transition-all">
                                 <Link href="/services">Our Services</Link>

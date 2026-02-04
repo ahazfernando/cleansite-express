@@ -29,7 +29,7 @@ export function HouseCleaningCTA() {
                         </p>
 
                         <div className="flex flex-col sm:flex-row justify-center gap-4 pt-4">
-                            <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-10 py-5 bg-white text-forest rounded-full font-bold text-lg hover:bg-yellow-300 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
+                            <Link href="/contact-us" className="inline-flex items-center justify-center gap-2 px-10 py-5 bg-white text-forest rounded-full font-bold text-lg hover:bg-yellow-300 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
                                 Book Now
                                 <ArrowRight className="w-5 h-5" />
                             </Link>

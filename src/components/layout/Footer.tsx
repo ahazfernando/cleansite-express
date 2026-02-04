@@ -21,17 +21,20 @@ const Footer = () => {
             <p className="text-primary-foreground/80 text-sm leading-relaxed">
               <strong className="text-primary-foreground">Skill City Facility Solutions</strong> — Professional cleaning services for homes and businesses across Melbourne, Oakleigh and Victoria. We make your spaces sparkle so you can focus on what matters most.
             </p>
+            <p className="text-primary-foreground/70 text-xs">
+              Service area: Melbourne, Victoria, Australia
+            </p>
             <div className="flex gap-4">
-              <a href="#" className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-primary transition-colors">
+              <a href="https://www.facebook.com/skillcityfs" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-primary transition-colors" aria-label="Facebook">
                 <Facebook className="w-5 h-5" />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-primary transition-colors">
+              <a href="https://twitter.com/skillcityfs" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-primary transition-colors" aria-label="Twitter">
                 <Twitter className="w-5 h-5" />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-primary transition-colors">
+              <a href="https://www.instagram.com/skillcityfs" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-primary transition-colors" aria-label="Instagram">
                 <Instagram className="w-5 h-5" />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-primary transition-colors">
+              <a href="https://www.linkedin.com/company/skillcityfs" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-primary transition-colors" aria-label="LinkedIn">
                 <Linkedin className="w-5 h-5" />
               </a>
             </div>
@@ -41,33 +44,22 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-6">Quick Links</h4>
             <ul className="space-y-3">
-              {["Home", "Services", "About Us", "Blog", "Contact"].map((link) => (
-                <li key={link}>
-                  <Link
-                    href={`/${link === "Home" ? "" : link.toLowerCase().replace(" ", "-").replace("us", "")}`}
-                    className="text-primary-foreground/80 hover:text-accent transition-colors text-sm"
-                  >
-                    {link}
-                  </Link>
-                </li>
-              ))}
+              <li><Link href="/" className="text-primary-foreground/80 hover:text-accent transition-colors text-sm">Home</Link></li>
+              <li><Link href="/services" className="text-primary-foreground/80 hover:text-accent transition-colors text-sm">Services</Link></li>
+              <li><Link href="/about-us" className="text-primary-foreground/80 hover:text-accent transition-colors text-sm">About Us</Link></li>
+              <li><Link href="/blog" className="text-primary-foreground/80 hover:text-accent transition-colors text-sm">Blog</Link></li>
+              <li><Link href="/contact-us" className="text-primary-foreground/80 hover:text-accent transition-colors text-sm">Contact</Link></li>
             </ul>
           </div>
 
-          {/* Services */}
+          {/* Services — strong internal links for sitelinks */}
           <div>
             <h4 className="text-lg font-semibold mb-6">Our Services</h4>
             <ul className="space-y-3">
-              {["House Cleaning", "Office Cleaning", "Deep Cleaning", "Move In/Out Cleaning", "Commercial Cleaning"].map((service) => (
-                <li key={service}>
-                  <Link
-                    href="/services"
-                    className="text-primary-foreground/80 hover:text-accent transition-colors text-sm"
-                  >
-                    {service}
-                  </Link>
-                </li>
-              ))}
+              <li><Link href="/services" className="text-primary-foreground/80 hover:text-accent transition-colors text-sm">All Services</Link></li>
+              <li><Link href="/services/house-cleaning" className="text-primary-foreground/80 hover:text-accent transition-colors text-sm">House Cleaning</Link></li>
+              <li><Link href="/services/builders-cleaning" className="text-primary-foreground/80 hover:text-accent transition-colors text-sm">Builders Cleaning</Link></li>
+              <li><Link href="/services" className="text-primary-foreground/80 hover:text-accent transition-colors text-sm">Office & Deep Cleaning</Link></li>
             </ul>
           </div>
 

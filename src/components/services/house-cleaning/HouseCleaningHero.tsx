@@ -42,7 +42,7 @@ export function HouseCleaningHero() {
                         </p>
 
                         <div className="flex flex-col sm:flex-row gap-4">
-                            <Link href="/contact" className="group relative px-8 py-4 bg-forest text-white rounded-full font-medium overflow-hidden transition-transform hover:scale-105 active:scale-95">
+                            <Link href="/contact-us" className="group relative px-8 py-4 bg-forest text-white rounded-full font-medium overflow-hidden transition-transform hover:scale-105 active:scale-95">
                                 <span className="relative z-10 flex items-center gap-2">
                                     Book a Clean
                                     <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />

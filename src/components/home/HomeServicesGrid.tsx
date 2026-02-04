@@ -4,28 +4,28 @@ import Link from "next/link";
 const services = [
     {
         icon: Home,
-        title: "Residential Cleaning",
-        description: "Transform your home into a spotless sanctuary with our thorough residential cleaning services.",
-        link: "/services/residential"
+        title: "House Cleaning",
+        description: "Transform your home into a spotless sanctuary with our thorough house cleaning services across Melbourne and Victoria.",
+        link: "/services/house-cleaning",
     },
     {
         icon: Building2,
-        title: "Commercial Cleaning",
-        description: "Keep your workplace pristine and professional with our comprehensive commercial solutions.",
-        link: "/services/commercial"
+        title: "Builders Cleaning",
+        description: "Post-construction and builders cleaning for a spotless handover. Serving Melbourne, Oakleigh and Victoria.",
+        link: "/services/builders-cleaning",
     },
     {
         icon: Sparkles,
         title: "Deep Cleaning",
         description: "Intensive cleaning that reaches every corner, perfect for seasonal refreshes or special occasions.",
-        link: "/services/deep-cleaning"
+        link: "/services",
     },
     {
         icon: Truck,
         title: "Move-in/Move-out",
         description: "Start fresh in your new space or leave the old one spotless with our moving day cleaning.",
-        link: "/services/move-in-out"
-    }
+        link: "/services",
+    },
 ];
 
 export default function HomeServicesGrid() {

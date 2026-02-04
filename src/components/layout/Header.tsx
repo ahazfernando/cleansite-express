@@ -61,9 +61,9 @@ const Header = () => {
 
   const navLinks = [
     { name: "Home", path: "/" },
-    { name: "About Us", path: "/about" },
+    { name: "About Us", path: "/about-us" },
     { name: "Blog", path: "/blog" },
-    { name: "Contact", path: "/contact" },
+    { name: "Contact", path: "/contact-us" },
   ];
 
   const isActive = (path: string) => pathname === path;
@@ -132,7 +132,7 @@ const Header = () => {
               037 044 7710
             </a>
             <Button className="btn-secondary" asChild>
-              <Link href="/contact">Book a Free Consultation</Link>
+              <Link href="/contact-us">Book a Free Consultation</Link>
             </Button>
           </div>
 
@@ -223,7 +223,7 @@ const Header = () => {
                 037 044 7710
               </a>
               <Button className="btn-secondary w-full mt-2" asChild>
-                <Link href="/contact">Book a Free Consultation</Link>
+                <Link href="/contact-us">Book a Free Consultation</Link>
               </Button>
             </nav>
           </div>
@@ -289,7 +289,7 @@ const Header = () => {
                     </p>
                   </Link>
                   <Link
-                    href="/about"
+                    href="/about-us"
                     onClick={() => setIsServicesOpen(false)}
                     className="block p-3 rounded-xl hover:bg-muted transition-colors group"
                   >
@@ -301,7 +301,7 @@ const Header = () => {
                     </p>
                   </Link>
                   <Link
-                    href="/contact"
+                    href="/contact-us"
                     onClick={() => setIsServicesOpen(false)}
                     className="block p-3 rounded-xl hover:bg-muted transition-colors group"
                   >

@@ -37,7 +37,7 @@ const HeroSection = () => {
 
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-slide-in-up" style={{ animationDelay: "0.2s" }}>
                     <Button className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full px-8 py-6 text-lg font-medium shadow-xl transition-all hover:scale-105" asChild>
-                        <Link href="/contact">
+                        <Link href="/contact-us">
                             Book a Free Consultation
                         </Link>
                     </Button>

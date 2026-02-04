@@ -29,7 +29,7 @@ const FeaturesHero = () => {
 
             <div className="flex flex-wrap gap-4">
               <Button className="btn-secondary flex items-center gap-2" asChild>
-                <Link href="/contact">
+                <Link href="/contact-us">
                   Book a Free Consultation
                   <ArrowRight className="w-4 h-4" />
                 </Link>

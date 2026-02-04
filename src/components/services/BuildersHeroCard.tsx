@@ -37,7 +37,7 @@ export function BuildersHeroCard() {
                             </div>
 
                             <Button asChild className="bg-slate-900 text-white rounded-2xl h-14 px-8 text-lg hover:bg-green-600 transition-colors">
-                                <Link href="/contact">
+                                <Link href="/contact-us">
                                     Book Now <ArrowRight className="ml-2 w-5 h-5" />
                                 </Link>
                             </Button>

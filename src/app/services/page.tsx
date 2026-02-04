@@ -1,19 +1,53 @@
 import { Metadata } from "next";
 import { ArrowRight, Home, Building2, Sparkles, Truck, Star, CheckCircle } from "lucide-react";
 
+const baseUrl = "https://www.skillcityfacilitysolutions.com.au";
+
 export const metadata: Metadata = {
     title: "Cleaning Services Melbourne & Victoria | House, Office & Builders",
     description: "House cleaning, office cleaning, builders cleaning, deep cleaning & move-in/out in Melbourne, Oakleigh & Victoria. Eco-friendly. Free quote.",
     keywords: ["cleaning services Melbourne", "house cleaning Victoria", "office cleaning Oakleigh", "builders cleaning", "deep cleaning", "move out cleaning"],
+    alternates: { canonical: `${baseUrl}/services` },
     openGraph: {
         title: "Cleaning Services Melbourne & Victoria | Skill City",
         description: "House, office, builders & deep cleaning in Melbourne, Oakleigh & Victoria. Eco-friendly. Free quote.",
-        url: "https://www.skillcityfacilitysolutions.com.au/services",
+        url: `${baseUrl}/services`,
+        siteName: "Skill City Facility Solutions",
+        locale: "en_AU",
+        type: "website",
+        images: [{ url: "/SkillCityPNGLOGO.png", width: 1200, height: 630, alt: "Skill City Facility Solutions" }],
     },
+    twitter: { card: "summary_large_image", title: "Cleaning Services Melbourne & Victoria | Skill City", description: "House, office, builders & deep cleaning in Melbourne & Victoria. Free quote." },
+    robots: { index: true, follow: true },
 };
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import cleanHomeImg from "@/assets/clean-home.jpg";
+
+const baseUrlSchema = "https://www.skillcityfacilitysolutions.com.au";
+
+const servicesItemListSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Cleaning Services Melbourne Victoria",
+    "description": "Professional cleaning services in Melbourne, Oakleigh and Victoria: house cleaning, office cleaning, builders cleaning, deep cleaning, move in/out.",
+    "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "House Cleaning", "url": `${baseUrlSchema}/services/house-cleaning` },
+        { "@type": "ListItem", "position": 2, "name": "Builders Cleaning", "url": `${baseUrlSchema}/services/builders-cleaning` },
+        { "@type": "ListItem", "position": 3, "name": "Office Cleaning", "url": `${baseUrlSchema}/services` },
+        { "@type": "ListItem", "position": 4, "name": "Deep Cleaning", "url": `${baseUrlSchema}/services` },
+        { "@type": "ListItem", "position": 5, "name": "Move In/Out Cleaning", "url": `${baseUrlSchema}/services` },
+    ],
+};
+
+const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": baseUrlSchema },
+        { "@type": "ListItem", "position": 2, "name": "Services", "item": `${baseUrlSchema}/services` },
+    ],
+};
 import officeCleaningImg from "@/assets/office-cleaning.jpg";
 import deepCleaningImg from "@/assets/deep-cleaning.jpg";
 import moveCleaningImg from "@/assets/move-cleaning.jpg";
@@ -65,6 +99,8 @@ const additionalServices = [
 export default function Services() {
     return (
         <>
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesItemListSchema) }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
             {/* Hero Section */}
             <section className="bg-secondary pt-32 pb-16 md:pt-40 md:pb-24">
                 <div className="container-custom text-center">
@@ -125,7 +161,7 @@ export default function Services() {
                                     </div>
 
                                     <Button className="btn-primary flex items-center gap-2" asChild>
-                                        <Link href="/contact">
+                                        <Link href="/contact-us">
                                             Get a Quote
                                             <ArrowRight className="w-4 h-4" />
                                         </Link>
@@ -163,7 +199,7 @@ export default function Services() {
 
                     <div className="text-center mt-12">
                         <Button className="btn-secondary" asChild>
-                            <Link href="/contact">Contact Us for Custom Quotes</Link>
+                            <Link href="/contact-us">Contact Us for Custom Quotes</Link>
                         </Button>
                     </div>
                 </div>

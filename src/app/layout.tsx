@@ -6,13 +6,15 @@ import ClientLayout from "@/components/layout/ClientLayout";
 
 const inter = Inter({ subsets: ["latin"] });
 
+const SITE_URL = "https://www.skillcityfacilitysolutions.com.au";
+
 export const metadata: Metadata = {
     title: {
         default: "Skill City Facility Solutions | Professional Cleaning Services Melbourne & Victoria",
         template: "%s | Skill City Facility Solutions",
     },
     description: "Skill City Facility Solutions — Premium residential and commercial cleaning in Melbourne, Oakleigh & Victoria. Eco-friendly house cleaning, office cleaning, builders cleaning. Free quotes.",
-    metadataBase: new URL("https://www.skillcityfacilitysolutions.com.au"),
+    metadataBase: new URL(SITE_URL),
     keywords: [
         "cleaning services Melbourne",
         "house cleaning Victoria",
@@ -25,16 +27,16 @@ export const metadata: Metadata = {
         "residential cleaning Victoria",
         "end of lease cleaning",
     ],
-    authors: [{ name: "Skill City Facility Solutions", url: "https://www.skillcityfacilitysolutions.com.au" }],
+    authors: [{ name: "Skill City Facility Solutions", url: SITE_URL }],
     creator: "Skill City Facility Solutions",
     publisher: "Skill City Facility Solutions",
     alternates: {
-        canonical: "https://www.skillcityfacilitysolutions.com.au",
+        canonical: SITE_URL,
     },
     openGraph: {
         type: "website",
         locale: "en_AU",
-        url: "https://www.skillcityfacilitysolutions.com.au",
+        url: SITE_URL,
         title: "Skill City Facility Solutions | Professional Cleaning Melbourne & Victoria",
         description: "Premium residential and commercial cleaning in Melbourne, Oakleigh & Victoria. Eco-friendly, professional facility solutions. Free quote.",
         siteName: "Skill City Facility Solutions",

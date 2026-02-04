@@ -46,7 +46,7 @@ export function AboutHeroSection() {
 
                         <div className="flex flex-col sm:flex-row gap-4">
                             <Button asChild className="bg-green-600 hover:bg-green-700 text-white h-14 px-10 text-lg rounded-xl">
-                                <Link href="/contact">Get Started <ArrowRight className="w-5 h-5" /></Link>
+                                <Link href="/contact-us">Get Started <ArrowRight className="w-5 h-5" /></Link>
                             </Button>
                             <Button asChild variant="outline" className="border-2 border-green-600 text-green-600 hover:bg-green-50 h-14 px-10 text-lg rounded-xl">
                                 <Link href="/services">Our Services</Link>

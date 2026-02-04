@@ -40,7 +40,7 @@ export function BuildersHeroImmersive() {
 
                     <div className="flex flex-col sm:flex-row gap-4 items-start">
                         <Button asChild className="bg-green-500 hover:bg-green-600 text-white h-16 px-12 rounded-full text-lg shadow-lg shadow-green-500/20 transition-all hover:scale-105">
-                            <Link href="/contact">
+                            <Link href="/contact-us">
                                 Free Consultation
                             </Link>
                         </Button>
